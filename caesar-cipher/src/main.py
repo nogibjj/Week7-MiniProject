@@ -1,3 +1,6 @@
+import sys
+import argparse
+
 def encrypt(text, shift):
     result = ""
     
@@ -16,10 +19,21 @@ def decrypt(text, shift):
     return encrypt(text, 26 - shift)
 
 def main():
-    plaintext = "the quick brown fox jumps over the lazy dog"
-    shift = 3
+    parser = argparse.ArgumentParser(description="Caesar Cipher encryption and decryption tool.")
+
+    # Positional arguments
+    parser.add_argument("plaintext", type=str, help="Text to be encrypted or decrypted.")
+    parser.add_argument("shift", type=int, help="Number of positions to shift the text.")
+
+    # Parse the arguments provided by the user
+    args = parser.parse_args()
+
+    plaintext = args.plaintext
+    shift = args.shift
+
     ciphertext = encrypt(plaintext, shift)
     decrypted_text = decrypt(ciphertext, shift)
+
     print("Plaintext:", plaintext)
     print("Ciphertext:", ciphertext)
     print("Decrypted text:", decrypted_text)
