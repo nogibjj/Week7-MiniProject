@@ -22,13 +22,20 @@ This project is a command-line interface (CLI) tool written in Rust, providing f
 |-- Cargo.toml
 ```
 
-## Run the CLI Tool
+## Run the CLI Tool in Rust
 
 ```bash
 cargo build
 cargo run
 ```
 ![image](run_result.png)
+
+## Run the CLI Tool in Python
+
+```bash
+python main.py <message> <shift>
+```
+![image](python_result.png)
 
 ## Test
 ```bash
